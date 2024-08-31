@@ -14,16 +14,8 @@ import (
 	"golang.org/x/net/ipv4"
 )
 
-// var webS = `
-// GET / HTTP/1.1
-// Host: ø
-// Connection: close
-// `
-// var subnet string
 var Red = "\033[31;1m"
 var Green = "\033[32;1m"
-
-//var Reset = "\033[0m"
 
 const (
 	ProtocolICMP = 1
@@ -68,9 +60,9 @@ func main() {
 		} else {
 			if *showAll {
 				fmt.Printf("%v[+] Alive connection %v (%v) %v\n", Green, dst, hn, dur)
-				fil.Write([]byte(fmt.Sprintf("[+] Alive connection %v (%v) %v\n", dst, hn, dur)))
 				continue
 			}
+			fil.Write([]byte(fmt.Sprintf("[+] Alive connection %v (%v) %v\n", dst, hn, dur)))
 		}
 	}
 }
